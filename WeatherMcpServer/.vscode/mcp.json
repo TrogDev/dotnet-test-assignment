@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "WeatherMcpServer": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "."
+      ],
+      "env": {
+        "OPEN_WEATHER_MAP_TOKEN": "9ff7c35ca18aa898b0eb3339fca1f5eb"
+      }
+    }
+  }
+}
