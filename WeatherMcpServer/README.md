@@ -1,6 +1,6 @@
 # Setup
 - Open the current folder in VS Code.
-- Set up your OpenWeatherMap token by adding it to the OPEN_WEATHER_MAP_TOKEN environment variable in .vscode/mcp.json. (Or just use the token that's already set in the variable) 
+- Set up your OpenWeatherMap token by adding it to the OPEN_WEATHER_MAP_TOKEN environment variable in .vscode/mcp.json.
 - Start the server via the Extensions tab or by clicking the Start button in mcp.json.
 
 # Usage

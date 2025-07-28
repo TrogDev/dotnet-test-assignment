@@ -10,6 +10,9 @@ namespace WeatherMcpServer.Providers.OpenWeatherMap;
 
 public class OpenWeatherMapProvider : IWeatherProvider, IDisposable
 {
+    private const string baseUrl = "https://api.openweathermap.org/data/2.5";
+    private const string units = "metric";
+
     private readonly string token;
     private readonly HttpClient client;
     private readonly ILogger<OpenWeatherMapProvider> logger;
@@ -24,7 +27,7 @@ public class OpenWeatherMapProvider : IWeatherProvider, IDisposable
     public async Task<WeatherInfo> GetCurrentWeather(string city, string? countryCode = null)
     {
         HttpResponseMessage response = await client.GetAsync(
-            $"https://api.openweathermap.org/data/2.5/weather?q={city},{countryCode}&units=metric&appid={token}"
+            $"{baseUrl}/weather?q={city},{countryCode}&units={units}&appid={token}"
         );
         ValidateWeatherResponse(response);
         WeatherResponse data = (await response.Content.ReadFromJsonAsync<WeatherResponse>())!;
@@ -34,7 +37,7 @@ public class OpenWeatherMapProvider : IWeatherProvider, IDisposable
     public async Task<List<WeatherInfo>> GetWeatherForecast(string city, string? countryCode = null)
     {
         HttpResponseMessage response = await client.GetAsync(
-            $"https://api.openweathermap.org/data/2.5/forecast?q={city},{countryCode}&units=metric&appid={token}"
+            $"{baseUrl}/forecast?q={city},{countryCode}&units={units}&appid={token}"
         );
         ValidateWeatherResponse(response);
         ForecastResponse data = (await response.Content.ReadFromJsonAsync<ForecastResponse>())!;

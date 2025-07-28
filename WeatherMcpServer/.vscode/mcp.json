@@ -9,7 +9,7 @@
         "."
       ],
       "env": {
-        "OPEN_WEATHER_MAP_TOKEN": "9ff7c35ca18aa898b0eb3339fca1f5eb"
+        "OPEN_WEATHER_MAP_TOKEN": "<your_token_here>"
       }
     }
   }
